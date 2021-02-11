@@ -33,4 +33,8 @@ describe('String Calculator Kata Tests', () => {
     expect(Add('1,1001,2')).toBe(3);
   });
 
+  it('should accept delimiters of any length', () => {
+    expect(Add('//[***]\n1***2***3')).toBe(6);
+  })
+
 });

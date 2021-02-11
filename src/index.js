@@ -28,9 +28,9 @@ function _sumAllPositiveNumbers(numbers) {
  */
 function _sumWithCustomDelimiter(numbers) {
     let [delimiterLine, numbersInput] = numbers.split('\n');
-    const delimiter = delimiterLine.replace('//', '');
-
-    return _sumAllPositiveNumbers(numbersInput.replace(delimiter, ','));
+    const delimiter = delimiterLine.replace(/\/\/|\[\|\]/g, '');
+    const regex = new RegExp(delimiter, "g");
+    return _sumAllPositiveNumbers(numbersInput.replace(regex, ','));
 }
 
 /**
