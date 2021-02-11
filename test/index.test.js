@@ -24,4 +24,8 @@ describe('String Calculator Kata Tests', () => {
   it('should support different delimiters when the first line starts with //', () => {
     expect(Add('//;\n1;2')).toBe(3);
   });
+
+  it('should throw an exception when numbers contains negative', () => {
+    expect(() => Add('1,-2,3,-4')).toThrow(/negatives not allowed: -2,-4/);
+  });
 });
