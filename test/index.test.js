@@ -16,4 +16,8 @@ describe('String Calculator Kata Tests', () => {
   it('should return the sum when the input contains any amount numbers separated by commas', () => {
     expect(Add('1,2,3,4')).toBe(10);
   });
+
+  it('should allow new lines between numbers', () => {
+    expect(Add('1,2\n3,4')).toBe(10);
+  });
 });
