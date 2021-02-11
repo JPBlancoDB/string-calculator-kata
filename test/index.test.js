@@ -40,4 +40,8 @@ describe('String Calculator Kata Tests', () => {
   it('should allow multiple delimiters', () => {
     expect(Add('//[*][%]\n1*2%3')).toBe(6);
   });
+
+  it('should allow multiple delimiters with length longer than one', () => {
+    expect(Add('//[***][%]\n1***2%3')).toBe(6);
+  });
 });
