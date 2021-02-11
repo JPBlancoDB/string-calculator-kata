@@ -20,4 +20,8 @@ describe('String Calculator Kata Tests', () => {
   it('should allow new lines between numbers', () => {
     expect(Add('1,2\n3,4')).toBe(10);
   });
+
+  it('should support different delimiters when the first line starts with //', () => {
+    expect(Add('//;\n1;2')).toBe(3);
+  });
 });
