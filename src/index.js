@@ -1,5 +1,5 @@
 const LINE_OR_COMMA_DELIMITER = /,|\n/;
-const _sumReducer = (total, currentNumber) => total + Number(currentNumber);
+const _sumReducer = (total, currentNumber) => (currentNumber > 1000) ? total : total + Number(currentNumber);
 
 /**
  * @param {string} numbers
@@ -39,6 +39,7 @@ function _sumWithCustomDelimiter(numbers) {
  */
 export function Add(numbers) {
     if (!numbers) return 0;
+
     if (numbers.startsWith('//')) {
         return _sumWithCustomDelimiter(numbers);
     }

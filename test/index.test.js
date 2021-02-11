@@ -28,4 +28,9 @@ describe('String Calculator Kata Tests', () => {
   it('should throw an exception when numbers contains negative', () => {
     expect(() => Add('1,-2,3,-4')).toThrow(/negatives not allowed: -2,-4/);
   });
+
+  it('should ignore numbers bigger than 1000', () => {
+    expect(Add('1,1001,2')).toBe(3);
+  });
+
 });
